@@ -15,7 +15,7 @@ Connection: close\r\n\
 def geocode(address):
     unencrypted_sock = socket.socket()
     unencrypted_sock.connect(('nominatim.openstreetmap.org', 443))
-    sock = ssl.SSLContext.wrap_socket(unencrypted_sock)
+    sock = ssl.wrap_socket(unencrypted_sock)
     request = request_text.format(quote_plus(address))
     sock.sendall(request.encode('ascii'))
     raw_reply = b''
