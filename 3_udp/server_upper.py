@@ -1,4 +1,3 @@
-import random
 import socket
 
 MAX_BYTES = 65535
